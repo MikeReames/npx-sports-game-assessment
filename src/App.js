@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
+import Game from './Components/game/Game.js';
+import Russiaville from './Components/Assets/images/raccoon.png';
+import Sheridan from './Components/Assets/images/squirrel.png';
+import Burlington from './Components/Assets/images/bunny.png';
+import Hammond from './Components/Assets/images/hound.png';
 import './App.css';
 
-function App() {
+
+function App(props) {
+  const raccoons = {
+    name: 'Russiaville Raccoons',
+    logoSrc: Russiaville
+  }
+
+  const squirrels = {
+    name: 'Sheridan Squirrels',
+    logoSrc: Sheridan
+  }
+
+  const bunnies = {
+    name: 'Burlington Bunnies',
+    logoSrc: Burlington
+  }
+
+  const hounds = {
+    name: 'Hammond Hounds',
+    logoSrc: Hammond
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Game
+        venue="Union 525 Gem"
+        homeTeam={squirrels}
+        visitingTeam={raccoons}
+      />
+      <Game
+        venue="Sheridan Arena"
+        homeTeam={bunnies}
+        visitingTeam={hounds}
+      />
     </div>
-  );
+  )
 }
 
 export default App;
